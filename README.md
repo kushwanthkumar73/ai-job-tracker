@@ -186,6 +186,24 @@ applications (id, user_id, job_id, status, match_score, cover_letter, notes, app
 - **Groq API (LLaMA 3.3)** — Free tier, fast inference, reliable JSON responses
 - **JWT with refresh tokens** — Auto-refresh prevents session expiry during active use
 - **Tailwind CSS** — Rapid UI development without custom CSS files
+e
+---
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard]
+
+### Kanban Board
+![Kanban]
+
+### AI API - Parse Job Description
+![Parse JD]
+
+### AI API - Resume Match Score
+![Match Resume]
+
+### AI API - Cover Letter
+![Cover Letter]
 
 ---
 🌐 Project Live:
