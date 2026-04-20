@@ -19,7 +19,7 @@ const AddJobPage = () => {
   const [resumeText, setResumeText] = useState('');
   const [matchResult, setMatchResult] = useState(null);
   const [coverLetter, setCoverLetter] = useState('');
-  const [savedJob, setSavedJob] = useState(null);
+  const [, setSavedJob] = useState(null);
 
   const handleParseJD = async () => {
     if (!jobData.job_description) return alert('Job description enter cheyyi!');
