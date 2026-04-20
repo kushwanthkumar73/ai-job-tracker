@@ -143,6 +143,7 @@ REST_FRAMEWORK = {
 # CORS
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'https://ai-job-tracker-orcin.vercel.app',
 ]
 
 # Middleware lo CORS add cheyyi - MIDDLEWARE list lo second line ga petti
