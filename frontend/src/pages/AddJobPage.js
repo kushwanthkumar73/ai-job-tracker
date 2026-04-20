@@ -6,7 +6,6 @@ const AddJobPage = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
-
   const [jobData, setJobData] = useState({
     company_name: '',
     role: '',
@@ -15,11 +14,9 @@ const AddJobPage = () => {
     location: '',
     required_skills: [],
   });
-
   const [resumeText, setResumeText] = useState('');
   const [matchResult, setMatchResult] = useState(null);
   const [coverLetter, setCoverLetter] = useState('');
-  const [, setSavedJob] = useState(null);
 
   const handleParseJD = async () => {
     if (!jobData.job_description) return alert('Job description enter cheyyi!');
@@ -45,7 +42,6 @@ const AddJobPage = () => {
     setLoading(true);
     try {
       const res = await createJob(jobData);
-      setSavedJob(res.data);
       await createApplication({ job: res.data.id, status: 'Applied' });
       setStep(2);
     } catch (err) {
@@ -89,10 +85,9 @@ const AddJobPage = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-blue-600 text-white px-6 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">🚀 AI Job Tracker</h1>
+        <h1 className="text-xl font-bold"> AI Job Tracker</h1>
         <Link to="/dashboard" className="hover:underline">← Back to Dashboard</Link>
       </nav>
-
       <div className="max-w-3xl mx-auto p-6">
         <div className="flex items-center mb-8">
           {['Job Details', 'Resume Match', 'Cover Letter'].map((s, i) => (
@@ -113,18 +108,12 @@ const AddJobPage = () => {
             <h2 className="text-xl font-bold text-gray-800 mb-4">Step 1: Job Details</h2>
             <div className="mb-4">
               <label className="block text-gray-700 font-medium mb-2">Job Description</label>
-              <textarea
-                rows={6}
-                value={jobData.job_description}
+              <textarea rows={6} value={jobData.job_description}
                 onChange={(e) => setJobData({ ...jobData, job_description: e.target.value })}
                 className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500"
-                placeholder="Paste job description here..."
-              />
-              <button
-                onClick={handleParseJD}
-                disabled={loading}
-                className="mt-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
-              >
+                placeholder="Paste job description here..." />
+              <button onClick={handleParseJD} disabled={loading}
+                className="mt-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
                 {loading ? 'Parsing...' : '🤖 Parse with AI'}
               </button>
             </div>
