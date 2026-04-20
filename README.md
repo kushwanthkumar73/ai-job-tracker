@@ -188,6 +188,9 @@ applications (id, user_id, job_id, status, match_score, cover_letter, notes, app
 - **Tailwind CSS** — Rapid UI development without custom CSS files
 
 ---
+🌐 Project Live:
+Frontend: https://ai-job-tracker-orcin.vercel.app
+Backend: https://ai-job-tracker-backend-phvt.onrender.com
 
 ## 👨‍💻 Author
 
